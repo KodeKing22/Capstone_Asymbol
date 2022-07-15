@@ -16,7 +16,7 @@ def get_all_guests(request):
     return Response(serializer.data)
 
 
-@api_view(['GET', 'POST'])
+@api_view(['GET', 'POST', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def user_guests(request):
     print(
@@ -28,8 +28,17 @@ def user_guests(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
-        cars = Guest.objects.filter(user_id=request.user.id)
-        serializer = GuestSerializer(cars, many=True)
+        guests = Guest.objects.filter(user_id=request.user.id)
+        serializer = GuestSerializer(guests, many=True)
         return Response(serializer.data)
+    elif request.method == 'DELETE':
+        guests.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_by_phone_number(request):
+        guests = Guest.objects.filter(phone_number=request.phone.number)
+        serializer = GuestSerializer(guests, many=False)
+        return Response(serializer.data)
