@@ -8,6 +8,7 @@ from .serializer import GuestSerializer
 
 
 
+
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def get_all_guests(request):
@@ -39,6 +40,10 @@ def user_guests(request):
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def get_by_phone_number(request):
-        guests = Guest.objects.filter(phone_number=request.phone.number)
+    print(
+        'User ', f"{request.phone.number}")
+    if request.method == 'GET':
+        guests = Guest.objects.all()
         serializer = GuestSerializer(guests, many=False)
-        return Response(serializer.data)
+        if serializer.is_valid():
+            return Response(serializer.data)

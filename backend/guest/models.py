@@ -1,16 +1,16 @@
 from django.db import models
-from authentication.models import User
+from phone_field import PhoneField
 
 
 class Guest(models.Model):
     first_name = models.CharField(max_length= 40)
     last_name = models.CharField(max_length=40)
-    email_address = models.CharField(max_length=40)
-    phone_number = models.IntegerField(max_length=10)
-    street = models.IntegerField(max_length=10)
+    email_address = models.EmailField(max_length=254)
+    phone_number = PhoneField(blank=True, help_text='Contact phone number')
+    street = models.CharField(max_length=200)
     city = models.CharField(max_length=40)
-    zip_code = models.IntegerField(max_length=10)
-    date_of_visit = models.IntegerField(max_length=10)
-    guest_of = models.CharField(max_length=80)
+    zip_code = models.IntegerField(blank=5)
+    date_of_visit = models.DateField(auto_now=True)
+    guest_of = models.CharField(max_length=40)
     
 
