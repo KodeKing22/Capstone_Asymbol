@@ -1,3 +1,4 @@
+from tkinter import TRUE
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.response import Response
@@ -17,33 +18,39 @@ def get_all_guests(request):
     return Response(serializer.data)
 
 
-@api_view(['GET', 'POST', 'DELETE'])
-@permission_classes([IsAuthenticated])
+@api_view(['POST'])
+@permission_classes([AllowAny])
 def user_guests(request):
-    print(
-        'User ', f"{request.user.id} {request.user.email} {request.user.username}")
     if request.method == 'POST':
         serializer = GuestSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(user=request.user)
+            serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    elif request.method == 'GET':
-        guests = Guest.objects.filter(user_id=request.user.id)
-        serializer = GuestSerializer(guests, many=True)
-        return Response(serializer.data)
-    elif request.method == 'DELETE':
-        guests.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def get_by_phone_number(request):
-    print(
-        'User ', f"{request.phone.number}")
+def get_by_phone_number(request,phonenumber):
+  
     if request.method == 'GET':
-        guests = Guest.objects.all()
-        serializer = GuestSerializer(guests, many=False)
-        if serializer.is_valid():
-            return Response(serializer.data)
+        guests = Guest.objects.filter(phone_number=phonenumber)
+        serializer = GuestSerializer(guests, many= True)
+        return Response(serializer.data)
+    
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_by_date(request):
+    if request.method == 'GET':
+        guests = Guest.objects.filter(date_of_visit= dateofvisit)
+        serializer = GuestSerializer(guests, many=True)
+        return Response(serializer.data)
+
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+def delete_by_id(request):
+     if request.method == 'DELETE':
+        guests = Guest.objects.filter(id=pk)
+        serializer = GuestSerializer(guests, many= False)
+        return Response(serializer.data)
