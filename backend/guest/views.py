@@ -41,7 +41,7 @@ def get_by_phone_number(request,phonenumber):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def get_by_date(request):
+def get_by_date(request,dateofvisit):
     if request.method == 'GET':
         guests = Guest.objects.filter(date_of_visit= dateofvisit)
         serializer = GuestSerializer(guests, many=True)
@@ -49,7 +49,7 @@ def get_by_date(request):
 
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
-def delete_by_id(request):
+def delete_by_id(request,pk):
      if request.method == 'DELETE':
         guests = Guest.objects.filter(id=pk)
         serializer = GuestSerializer(guests, many= False)
