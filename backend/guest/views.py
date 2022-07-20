@@ -4,6 +4,8 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import api_view, permission_classes
+
+
 from .models import Guest
 from .serializer import GuestSerializer  
 
@@ -51,6 +53,16 @@ def get_by_date(request,dateofvisit):
 @permission_classes([IsAuthenticated])
 def delete_by_id(request,pk):
      if request.method == 'DELETE':
-        guests = Guest.objects.filter(id=pk)
-        serializer = GuestSerializer(guests, many= False)
+        guests = Guest.objects.get(pk=pk)
+        guests.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+def update_by_phone_number(request,phonenumber):
+   if request.method == 'PUT': 
+        guest = Guest.objects.get(phone_number= phonenumber)
+        serializer = GuestSerializer(guest, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
         return Response(serializer.data)
