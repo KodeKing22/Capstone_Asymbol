@@ -14,7 +14,7 @@ html {
 }
 
 p {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 button {
@@ -33,12 +33,12 @@ button:hover {
   background-color: steelblue;
 }
 
-.container {
+/* .container {
   margin: 0 auto;
   max-width: 600px;
   overflow: auto;
   text-align: center;
-}
+} */
 
 .form {
   align-items: center;
@@ -50,9 +50,66 @@ button:hover {
 
 .form input {
   display: block;
-  width: 100%;
+  width: 150%;
   height: 25px;
   margin: 5px;
   padding: 3px 7px;
-  font-size: 17px;
+  font-size: 20px;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.container{
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: auto;
+  text-align: center;
+  height: 100vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}  
+
+.img{
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.modal {
+  font-size: 12px;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
 }
