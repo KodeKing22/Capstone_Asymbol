@@ -5,6 +5,7 @@ import useCustomForm from "../../hooks/useCustomForm";
 import axios from "axios";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import{ toast }from 'react-toastify';
 
 let initialValues = {
   first_name: "",
@@ -44,6 +45,9 @@ const AddGuestPage = () => {
     }
   }
 
+  var handleClick = () => {
+    toast.success('trigger');
+  }
   return (
     <div className="container">
         <h1>Welcome First Time Guest!</h1>
@@ -135,7 +139,7 @@ const AddGuestPage = () => {
          
         </div>
         <Popup
-    trigger={ <button type="submit" className="button" onClick="openPopup()">
+    trigger={ <button type="submit" className="button" onClick= {handleClick}>
     Submit
   </button>}
     modal
