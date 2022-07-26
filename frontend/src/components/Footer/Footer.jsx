@@ -3,7 +3,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer>
-      <p>Created by KodeKing22</p>{" "}
+      <h4>Created by KodeKing22</h4>{" "}
     </footer>
   );
 };

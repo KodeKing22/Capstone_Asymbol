@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import axios from "axios";
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
-import{ toast }from 'react-toastify';
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
+import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 let initialValues = {
   first_name: "",
@@ -46,12 +47,12 @@ const AddGuestPage = () => {
   }
 
   var handleClick = () => {
-    toast.success('trigger');
-  }
+    toast.success("trigger");
+  };
   return (
     <div className="container">
-        <h1>Welcome First Time Guest!</h1>
-        <h4>Please complete the short form below</h4>
+      <h1>Welcome First Time Guest!</h1>
+      <h4>Please complete the short form below</h4>
       <form className="form" onSubmit={handleSubmit}>
         <label>
           First Name:{""}
@@ -134,42 +135,32 @@ const AddGuestPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        
-        <div>
-         
-        </div>
+
+        <div></div>
         <Popup
-    trigger={ <button type="submit" className="button" onClick= {handleClick}>
-    Submit
-  </button>}
-    modal
-    nested
-  >
-    {close => (
-      <div className="modal">
-      
-        <div className="content">
-        <img src="green_checkmark.svg" />
-          {' '}
-          Thank You for Visiting!
-          <br />
-          We Have a Special Gift just for You!
-        </div>
-        <div className="actions">
-          
-          <button
-            className="button"
-            onClick={() => {
-              console.log('modal closed ');
-              close();
-            }}
-          >
-            OK
-          </button>
-        </div>
-      </div>
-    )}
-  </Popup>
+          trigger={
+            <button type="submit" className="button" onClick={handleClick}>
+              Submit
+            </button>
+          }
+          modal
+          nested
+        >
+          {(close) => (
+            <div className="modal">
+              <div className="content">
+                <img src="green_checkmark.svg" /> Thank You for Visiting!
+                <br />
+                We Have a Special Gift just for You!
+              </div>
+              <div className="actions">
+                <Link to="/welcome">
+                  <button type="button">OK</button>
+                </Link>
+              </div>
+            </div>
+          )}
+        </Popup>
       </form>
     </div>
   );
