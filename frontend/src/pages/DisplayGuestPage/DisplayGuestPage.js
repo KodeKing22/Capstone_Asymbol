@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 
 const DisplayGuestPage = ({ guests }) => {
-    function generateGuestForToday() {
-      console.log(guests);
+    // function generateGuestForToday() {
+    //   console.log(guests);
   
       //Filter the guests by date
     //   let filteredGuests = guests.filter((guest) => guests.day == "Only Today's Date");
@@ -19,12 +19,18 @@ const DisplayGuestPage = ({ guests }) => {
       
     
     return ( 
-        <div>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'Center',
+          alignItems: 'flex',
+          height: '100vh'
+        }}>
+          <h1>Guest for "today's date"</h1>
             
         
      
         </div>
     )};
-}
+
  
 export default DisplayGuestPage;

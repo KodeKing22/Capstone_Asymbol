@@ -5,8 +5,9 @@ import useCustomForm from "../../hooks/useCustomForm";
 import axios from "axios";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
-import { toast } from "react-toastify";
+
 import { Link } from "react-router-dom";
+
 
 let initialValues = {
   first_name: "",
@@ -46,11 +47,8 @@ const AddGuestPage = () => {
     }
   }
 
-  var handleClick = () => {
-    toast.success("trigger");
-  };
   return (
-    <div className="container">
+    <div>
       <h1>Welcome First Time Guest!</h1>
       <h4>Please complete the short form below</h4>
       <form className="form" onSubmit={handleSubmit}>
@@ -139,7 +137,7 @@ const AddGuestPage = () => {
         <div></div>
         <Popup
           trigger={
-            <button type="submit" className="button" onClick={handleClick}>
+            <button type="submit" className="button" >
               Submit
             </button>
           }

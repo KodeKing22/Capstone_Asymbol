@@ -19,7 +19,12 @@ const LoginPage = () => {
   }, [isServerError]);
 
   return (
-    <div className="container">
+    <div style={{
+      display: 'flex',
+      justifyContent: 'Right',
+      alignItems: 'Right',
+      height: '100vh'
+    }}>
       <form className="form" onSubmit={handleSubmit}>
         <label>
           Username:{" "}
