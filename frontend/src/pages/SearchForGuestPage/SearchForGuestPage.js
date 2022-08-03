@@ -12,9 +12,9 @@ const SearchForGuestPage = ({SearchForVideoGuests}) => {
   return (
     <form onSubmit={handleSubmit} className="form-grid">
       <div style={{
-        display: 'flex',
-        justifyContent: 'Right',
-        alignItems: 'Right',
+        display: 'center',
+        justifyContent: 'center',
+        alignItems: 'flex',
         height: '100vh'
       }}>
         <label>Seach Guests by Phone Number</label>

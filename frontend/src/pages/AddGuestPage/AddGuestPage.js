@@ -7,6 +7,7 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
 import { Link } from "react-router-dom";
+import Notification from 'rc-notifications'
 
 
 let initialValues = {
@@ -29,7 +30,13 @@ const AddGuestPage = () => {
     initialValues,
     addNewGuest
   );
-
+  var handleClick = () => {
+    Notification.newInstance({}, notification => {
+      notification.notice({
+        content: 'Guest Check-In'
+      });
+    });
+  };
   async function addNewGuest() {
     try {
       let response = await axios.post(
@@ -46,7 +53,7 @@ const AddGuestPage = () => {
       console.log(error.message);
     }
   }
-
+  
   return (
     <div>
       <h1>Welcome First Time Guest!</h1>
@@ -137,7 +144,7 @@ const AddGuestPage = () => {
         <div></div>
         <Popup
           trigger={
-            <button type="submit" className="button" >
+            <button type="submit" className="button" href="#" onClick={() => { handleClick(); Notification.newInstance();}}>
               Submit
             </button>
           }

@@ -4,8 +4,8 @@ import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import axios from "axios";
 import Popup from "reactjs-popup";
-// import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+
 
 let initialValues = {
   phone_number: "",
@@ -19,7 +19,7 @@ const SecondTimeGuestPage = () => {
     secondGuestCheckIn
   );
   var handleClick = () => {
-    //toast.success("trigger");
+   
   };
   async function secondGuestCheckIn() {
     try {
@@ -37,11 +37,12 @@ const SecondTimeGuestPage = () => {
       console.log(error.message);
     }
   }
+  
   return (
     <div style={{
-      display: 'flex',
-      justifyContent: 'Right',
-      alignItems: 'Right',
+      display: 'center',
+      justifyContent: 'center',
+      alignItems: 'flex',
       height: '100vh'
     }}>
       <h1>Welcome Back!</h1>
@@ -60,7 +61,7 @@ const SecondTimeGuestPage = () => {
         <div></div>
         <Popup
           trigger={
-            <button type="submit" className="button" onClick={handleClick}>
+            <button type="submit" className="button">
               Submit
             </button>
           }
