@@ -10,6 +10,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AddGuestPage from "./pages/AddGuestPage/AddGuestPage";
 import DisplayGuestPage from "./pages/DisplayGuestPage/DisplayGuestPage";
 import SearchForGuestPage from "./pages/SearchForGuestPage/SearchForGuestPage";
+import NotificationPage from "./pages/NotificationPage/NotificationPage";
 
 // Component Imports
 import NavBar from "./components/NavBar/NavBar";
@@ -59,6 +60,7 @@ function App() {
   <Route path="/secondguest" element= {<SecondTimeGuestPage />} />
   <Route path="/register" element={<RegisterPage />} />
   <Route path="/login" element={<LoginPage />} />
+  <Route path="/notification" element={<NotificationPage guest={guest}/>} />
  
   </Routes>
  

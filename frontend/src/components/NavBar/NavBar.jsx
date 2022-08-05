@@ -34,6 +34,11 @@ import { NavLink as Link} from 'react-router-dom';
               <b className="">Welcome Page</b>
             </Link>
           </li>
+          <li className="">
+            <Link to="/notification" style={{ textDecoration: "none", color: "white" }}>
+              <b className="">Notification Page</b>
+            </Link>
+          </li>
           <li>
             {user ? (
               <button onClick={logoutUser}>Logout</button>

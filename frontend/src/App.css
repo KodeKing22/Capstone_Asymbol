@@ -17,6 +17,9 @@ p {
   font-size: 20px;
 }
 
+body {
+  background: linear-gradient(to bottom, #267871, #136a8a)
+}
 button {
   background-color: transparent;
   border: 2px solid steelblue;
@@ -74,6 +77,6 @@ button:hover {
 
 
 
-/*background: #136a8a;  /* fallback for old browsers */
+/* background: #136a8a;  /* fallback for old browsers */
 /*background: -webkit-linear-gradient(to bottom, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
-/*background: linear-gradient(to bottom, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*background: linear-gradient(to bottom, #267871, #136a8a); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

@@ -5,6 +5,7 @@ import useCustomForm from "../../hooks/useCustomForm";
 import axios from "axios";
 import Popup from "reactjs-popup";
 import { Link } from "react-router-dom";
+import checkmark from "../../img/green_checkmark.svg.png"
 
 
 let initialValues = {
@@ -71,7 +72,7 @@ const SecondTimeGuestPage = () => {
           {(close) => (
             <div className="modal">
               <div className="content">
-                <img src="green_checkmark.svg" /> Thank You for Coming Back!
+                <img height={"50px"} src={checkmark}/>Thank You for Coming Back!
                 <br />
                 We Have a Aother Special Gift for You!
               </div>

@@ -7,8 +7,7 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
 import { Link } from "react-router-dom";
-import Notification from 'rc-notifications'
-
+import Notification from "rc-notifications";
 
 let initialValues = {
   first_name: "",
@@ -31,9 +30,9 @@ const AddGuestPage = () => {
     addNewGuest
   );
   var handleClick = () => {
-    Notification.newInstance({}, notification => {
+    Notification.newInstance({}, (notification) => {
       notification.notice({
-        content: 'Guest Check-In'
+        content: "Guest Check-In",
       });
     });
   };
@@ -53,7 +52,7 @@ const AddGuestPage = () => {
       console.log(error.message);
     }
   }
-  
+
   return (
     <div>
       <h1>Welcome First Time Guest!</h1>
@@ -144,9 +143,9 @@ const AddGuestPage = () => {
         <div></div>
         <Popup
           trigger={
-            <button type="submit" className="button" href="#" onClick={() => { handleClick(); Notification.newInstance();}}>
-              Submit
-            </button>
+            <button type="submit" className="button">
+            Submit
+          </button>
           }
           modal
           nested
@@ -154,7 +153,7 @@ const AddGuestPage = () => {
           {(close) => (
             <div className="modal">
               <div className="content">
-                <img src="green_checkmark.svg" /> Thank You for Visiting!
+                <img src="./public/green_checkmark.svg.png"/> Thank You for Visiting!
                 <br />
                 We Have a Special Gift just for You!
               </div>

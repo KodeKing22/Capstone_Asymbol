@@ -6,17 +6,17 @@ import React, { useEffect } from "react";
 
 
 const DisplayGuestPage = ({ guest }) => {
-    function generateGuestForToday() {
+    function generateAllGuest() {
       console.log(guest);
   
       //Filter the guests by date
-      let filteredGuests = guest.filter((guest) => guest.date_of_visit === "Only Today's Date");
+      let filteredGuests = guest.filter((guest) => guest.all === "All guest");
   
       console.log(filteredGuests);
     }
 
     useEffect(()=>{
-      generateGuestForToday()
+      generateAllGuest()
     })
                
     return ( 
@@ -27,7 +27,7 @@ const DisplayGuestPage = ({ guest }) => {
           height: '100vh'
         }}>
           <h1>All Guest</h1>
-          {guest.map(filteredGuests => <div>{filteredGuests.first_name}{filteredGuests.last_name}{filteredGuests.date_of_visit}</div>)}
+          {guest.map(filteredGuests => <div>{filteredGuests.first_name} {filteredGuests.last_name}</div>)}
 
         
         
