@@ -5,12 +5,7 @@ const NotificationsPage = ({ guest }) => {
   function generateGuestForToday() {
     console.log(guest);
 
-    // //Filter the guests by date
-    // let allGuests = guest.get((guest) => guest.all === "All Guest");
-    // console.log(allGuests);
-
-
-    const date = new Date();
+     const date = new Date();
 
     let day = date.getDate();
     if(day < 10){

@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import axios from "axios";
 import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
+import checkmark from "../../img/green_checkmark.svg.png";
 
 import { Link } from "react-router-dom";
 import Notification from "rc-notifications";
@@ -54,7 +54,14 @@ const AddGuestPage = () => {
   }
 
   return (
-    <div>
+    <div
+      style={{
+        display: "center",
+        justifyContent: "center",
+        alignItems: "flex",
+        height: "100vh",
+      }}
+    >
       <h1>Welcome First Time Guest!</h1>
       <h4>Please complete the short form below</h4>
       <form className="form" onSubmit={handleSubmit}>
@@ -144,8 +151,8 @@ const AddGuestPage = () => {
         <Popup
           trigger={
             <button type="submit" className="button">
-            Submit
-          </button>
+              Submit
+            </button>
           }
           modal
           nested
@@ -153,9 +160,10 @@ const AddGuestPage = () => {
           {(close) => (
             <div className="modal">
               <div className="content">
-                <img src="./public/green_checkmark.svg.png"/> Thank You for Visiting!
+                <img height={"50px"} src={checkmark} />
+                Thank You for Coming Back!
                 <br />
-                We Have a Special Gift just for You!
+                We Have A Special Gift for You!
               </div>
               <div className="actions">
                 <Link to="/welcome">

@@ -74,7 +74,7 @@ const SecondTimeGuestPage = () => {
               <div className="content">
                 <img height={"50px"} src={checkmark}/>Thank You for Coming Back!
                 <br />
-                We Have a Aother Special Gift for You!
+                We Have Another Special Gift for You!
               </div>
               <div className="actions">
                 <Link to="/welcome">

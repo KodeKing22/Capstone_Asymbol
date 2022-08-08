@@ -14,7 +14,7 @@ import { NavLink as Link} from 'react-router-dom';
     return (
       <div className="navBar">
         <ul>
-          <li className="brand">
+          <li className="list-inline-item">
             <Link to="/" style={{ textDecoration: "none", color: "white" }}>
               <b className="">ASYMBOL</b>
             </Link>
