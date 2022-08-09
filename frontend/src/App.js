@@ -25,6 +25,7 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
 
 function App() {
   const [guest, setGuest] = useState([]);
+  const [shoe, setShoe] = useState('');
   // const [foundGuestByPhoneNumber, setFoundGuestByPhoneNumber] = useState([])
 
   async function getAllGuest() {
@@ -45,7 +46,7 @@ function App() {
     });
     setGuest(guestByPhoneNumber);
     console.log("Testing")
-  
+  }
   return (
 
  <>
@@ -70,6 +71,6 @@ function App() {
   
 );
 
-}
+
 }
 export default App;

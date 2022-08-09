@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-let initialValues = {
-  phone_number: ""
-};
+
 
 const SearchForGuestPage = () => {
   const [user, token] = useAuth();
+  const [guestsByPhoneNumber, setGuestsByPhoneNumber] = useState([])
+
+  const initialValues = {
+    phone_number: ""
+  };
+
   const navigate = useNavigate();
   const [formData, handleInputChange, handleSubmit] = useCustomForm(
     initialValues,
@@ -20,7 +24,7 @@ const SearchForGuestPage = () => {
   async function searchForGuest() {
     try {
       let response = await axios.get(
-        "http://127.0.0.1:8000/api/guests/phonenumber/17777777777/",
+        `http://127.0.0.1:8000/api/guests/phonenumber/1${formData.phone_number}/` ,
         formData,
         {
           headers: {
@@ -28,7 +32,9 @@ const SearchForGuestPage = () => {
           },
         }
       );
-      navigate();
+      console.log(response.data)
+      setGuestsByPhoneNumber(response.data)
+      // navigate("/");
     } catch (error) {
       console.log(error.message);
     }
@@ -43,8 +49,9 @@ const SearchForGuestPage = () => {
         <label>
         <input
           type="text"
-          phone_number=""
+          name="phone_number"
           onChange={handleInputChange}
+          value={formData.phone_number}
           />
         </label>
         <button type="submit" className="button">
@@ -52,7 +59,23 @@ const SearchForGuestPage = () => {
         </button>
       
     </form>
-    </div>
+    {guestsByPhoneNumber.map((guest) => {
+      return(
+        <table>
+          
+        <tr>
+                  <th>Name</th>
+                  <th>Phone Number</th>
+                </tr>
+                <tr>
+                    <td>{guest.first_name} {guest.last_name}</td>
+                    <td>{guest.phone_number}</td>
+                </tr>
+        </table>
+         ) })}
+{/* use .map to display name and phone number of guestsByPhoneNumber */}
+          </div>
+
   );
 };
 
