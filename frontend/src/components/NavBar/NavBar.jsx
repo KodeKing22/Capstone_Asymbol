@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useNavigate} from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
+import ASYMBOL from "../../img/ASYMBOLlogo.svg.png"
 
 import { NavLink as Link} from 'react-router-dom';
  
@@ -14,9 +15,21 @@ import { NavLink as Link} from 'react-router-dom';
     return (
       <div className="navBar">
         <ul>
-          <li className="list-inline-item">
-            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-              <b className="">ASYMBOL</b>
+          <li class="navBar" href="/">
+      <img
+        href="/"
+        src={ASYMBOL}
+       
+        />
+          </li>
+          <li className="">
+            <Link to="/welcome" style={{ textDecoration: "none", color: "white" }}>
+              <b className="">Welcome Page</b>
+            </Link>
+          </li>
+          <li className="">
+            <Link to="/notification" style={{ textDecoration: "none", color: "white" }}>
+              <b className="">Notification Page</b>
             </Link>
           </li>
            <li className="">
@@ -27,16 +40,6 @@ import { NavLink as Link} from 'react-router-dom';
           <li className="">
             <Link to="/searchguest" style={{ textDecoration: "none", color: "white" }}>
               <b className="">Search Guest</b>
-            </Link>
-          </li>
-          <li className="">
-            <Link to="/welcome" style={{ textDecoration: "none", color: "white" }}>
-              <b className="">Welcome Page</b>
-            </Link>
-          </li>
-          <li className="">
-            <Link to="/notification" style={{ textDecoration: "none", color: "white" }}>
-              <b className="">Notification Page</b>
             </Link>
           </li>
           <li>

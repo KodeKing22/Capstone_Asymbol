@@ -10,10 +10,14 @@ const WelcomePage = (props) => {
     height: '100vh'
   }}>
    <h1>Welcome to Asymbol</h1>
-    <div>
-
-      <Link to="/addguest">First Time Visiting</Link>\
-      <Link to="/secondguest">Second Time Visiting!</Link>
+    <div className='multi-button'>
+      <Link to="/addguest">
+      <a href="#" class="btn btn-white btn-animation-1">First Visit</a> 
+      </Link>
+      <Link to="/secondguest">
+      <a href="#" class="btn btn-white btn-animation-1">Second Visit</a> 
+      </Link>
+      
     </div>
   </div>);
 }

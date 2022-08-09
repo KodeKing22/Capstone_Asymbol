@@ -54,19 +54,12 @@ const AddGuestPage = () => {
   }
 
   return (
-    <div
-      style={{
-        display: "center",
-        justifyContent: "center",
-        alignItems: "flex",
-        height: "100vh",
-      }}
-    >
-      <h1>Welcome First Time Guest!</h1>
+    <div >
+      <h1>We Appreciate You Vistiting Guest!</h1>
       <h4>Please complete the short form below</h4>
       <form className="form" onSubmit={handleSubmit}>
         <label>
-          First Name:{""}
+           First Name:{""}
           <input
             type="text"
             name="first_name"

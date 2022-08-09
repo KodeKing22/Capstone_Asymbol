@@ -10,14 +10,12 @@ const SearchForGuestPage = ({SearchForVideoGuests}) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="form-grid">
-      <div style={{
-        display: 'center',
-        justifyContent: 'center',
-        alignItems: 'flex',
-        height: '100vh'
-      }}>
-        <label>Seach Guests by Phone Number</label>
+    <div className="form">
+
+
+    <form onSubmit={handleSubmit}>
+     
+        <h1>Seach for Guests by Phone Number</h1>
         <input
           type="text"
           value={phoneNumber}
@@ -27,8 +25,9 @@ const SearchForGuestPage = ({SearchForVideoGuests}) => {
         <button type="submit" className="btn btn-primary">
           Search
         </button>
-      </div>
+      
     </form>
+    </div>
   );
 };
 

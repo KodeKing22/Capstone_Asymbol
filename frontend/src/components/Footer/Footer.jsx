@@ -1,6 +1,6 @@
 import "./Footer.css";
 import React from "react";
-import { Link } from "react-router-dom";
+
 
 const Footer = () => {
   return (
@@ -9,14 +9,14 @@ const Footer = () => {
         
         <ul class="list-inline">
           <li class="list-inline-item">
-          <Link to="/">
-            <a href="#">Home</a>
-            </Link>
+          
+            <a href="/">Home</a>
+            
           </li>
           <li class="list-inline-item">
-          <Link to="/welcome">
-            <a href="#">Services</a>
-            </Link>
+          
+            <a href="/welcome">Services</a>
+            
           </li>
           <li class="list-inline-item">
             <a href="#">About</a>

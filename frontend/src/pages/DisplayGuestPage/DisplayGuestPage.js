@@ -20,14 +20,24 @@ const DisplayGuestPage = ({ guest }) => {
     })
                
     return ( 
-        <div style={{
-          display: 'center',
-          justifyContent: 'Center',
-          alignItems: 'flex',
-          height: '100vh'
-        }}>
-          <h1>All Guest</h1>
-          {guest.map(filteredGuests => <div>{filteredGuests.first_name} {filteredGuests.last_name}</div>)}
+        <div>
+          <h1>All Guest to Date </h1>
+          <table>
+            <tr>
+              <th>First Name </th>
+              <th>Last Name </th>
+              <th>Date of Visit </th>
+            </tr>
+          {guest.map((filteredGuests) => {
+              return(
+                <tr>
+                    <td>{filteredGuests.first_name}</td>
+                    <td>{filteredGuests.last_name}</td>
+                    <td>{filteredGuests.date_of_visit}</td>
+                </tr>)
+          })}
+                
+          </table>
 
         
         

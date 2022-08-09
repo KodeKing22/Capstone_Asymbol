@@ -18,12 +18,15 @@ p {
 }
 
 body {
-  background: linear-gradient(to bottom, #267871, #136a8a)
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
 }
 button {
   background-color: transparent;
-  border: 2px solid steelblue;
-  color: steelblue;
+  border: 2px solid #aaa;
+  color: #aaa;
   font-size: 1rem;
   font-family: inherit;
   max-width: 100px;
@@ -33,7 +36,7 @@ button {
 button:hover {
   cursor: pointer;
   color: white;
-  background-color: steelblue;
+  background-color: #aaa;
 }
 
 .container {
@@ -62,7 +65,7 @@ button:hover {
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  
   font-family: 'Poppins', sans-serif;
 }
 .container{
@@ -75,11 +78,95 @@ button:hover {
 
 }
 h1{
+  display: center;
+  position: center;
   color: #aaa;
 }
+
 div{
   color: #aaa;
 }
+table, tr {
+  padding-left: 10;
+  border: 1px solid;
+  width: 50%;
+  background-color: transparent;
+  border-collapse: collapse;
+}
+.box{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform : translate(-50% ,-50%);
+}
+
+.btn:link,
+.btn:visited{
+  text-decoration: none;
+  text-transform:uppercase;
+  position:relative;
+  top:0;
+  left:0;
+  padding:20px 40px;
+  border-radius:100px;
+  display:inline-block;
+  transition: all .5s;
+}
+
+.btn-white{
+  background:#fff;
+  color:#000;
+}
+
+.btn:hover{
+   box-shadow:0px 10px 10px rgba(0,0,0,0.2);
+   transform : translateY(-3px);
+}
+
+.btn:active{
+  box-shadow:0px 5px 10px rgba(0,0,0,0.2);
+  transform:translateY(-1px);
+}
+
+.btn-bottom-animation-1{
+  animation:comeFromBottom 1s ease-out .8s;
+}
+
+.btn::after{
+  content:"";
+  text-decoration: none;
+  text-transform:uppercase;
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  border-radius:100px;
+  display:inline-block;
+  z-index:-1;
+  transition: all .5s;
+}
+
+.btn-white::after {
+    background: #fff;
+}
+
+.btn-animation-1:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+@keyframes comeFromBottom{
+  0%{
+    opacity:0;
+    transform:translateY(40px);
+  } 
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 
 
 /* background: #136a8a;  /* fallback for old browsers */

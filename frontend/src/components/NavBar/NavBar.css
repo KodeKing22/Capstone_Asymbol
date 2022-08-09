@@ -5,12 +5,13 @@ ul {
 }
 
 li {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .navBar {
-  background: steelblue;
-  box-shadow: 4px 2px 5px gray;
+  background: transparent;
+  /* box-shadow: 4px 2px 5px gray; */
+  
   color: white;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem;
@@ -25,7 +26,7 @@ li {
 
 .navBar button:hover {
   background: white;
-  color: steelblue;
+  color: #aaa;
   cursor: pointer;
 }
 
@@ -33,6 +34,8 @@ li {
   cursor: pointer;
   font-size: 2rem;
 }
+img{
+  height:100px
+}
 
-
-/* below this is a template that was imported */
+/* #5b666e */

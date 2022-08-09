@@ -19,12 +19,7 @@ const LoginPage = () => {
   }, [isServerError]);
 
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'Right',
-      alignItems: 'Right',
-      height: '100vh'
-    }}>
+    <div>
       <form className="form" onSubmit={handleSubmit}>
         <label>
           Username:{" "}
@@ -54,6 +49,7 @@ const LoginPage = () => {
       
       </form>
     </div>
+
   );
 };
 
