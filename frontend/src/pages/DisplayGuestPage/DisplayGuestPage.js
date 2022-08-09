@@ -24,15 +24,13 @@ const DisplayGuestPage = ({ guest }) => {
           <h1>All Guest to Date </h1>
           <table>
             <tr>
-              <th>First Name </th>
-              <th>Last Name </th>
+              <th>Name </th>
               <th>Date of Visit </th>
             </tr>
           {guest.map((filteredGuests) => {
               return(
                 <tr>
-                    <td>{filteredGuests.first_name}</td>
-                    <td>{filteredGuests.last_name}</td>
+                    <td>{filteredGuests.first_name} {filteredGuests.last_name}</td>
                     <td>{filteredGuests.date_of_visit}</td>
                 </tr>)
           })}

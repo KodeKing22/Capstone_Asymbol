@@ -30,11 +30,13 @@ const NotificationsPage = ({ guest }) => {
     <div>
       <h1>Guest for Today </h1>
       <table>
+       
         <tr>
           <th>Name</th>
           <th>Date</th>
         </tr>
-        {todaysGuests.map((results) => {
+        
+         {todaysGuests.map((results) => {
           return (
             <tr>
               <td>
@@ -44,6 +46,7 @@ const NotificationsPage = ({ guest }) => {
             </tr>
           );
         })}
+        
       </table>
     </div>
   );

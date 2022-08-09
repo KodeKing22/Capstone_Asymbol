@@ -26,7 +26,7 @@ li {
 
 .navBar button:hover {
   background: white;
-  color: #aaa;
+  color: steelblue;
   cursor: pointer;
 }
 
@@ -38,4 +38,4 @@ img{
   height:100px
 }
 
-/* #5b666e */
+

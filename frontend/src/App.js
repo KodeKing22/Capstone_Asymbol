@@ -25,6 +25,7 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
 
 function App() {
   const [guest, setGuest] = useState([]);
+  // const [foundGuestByPhoneNumber, setFoundGuestByPhoneNumber] = useState([])
 
   async function getAllGuest() {
     let response = await axios.get("http://127.0.0.1:8000/api/guests/all/");
@@ -34,17 +35,16 @@ function App() {
     getAllGuest();
   }, []);
 
-  function SearchForGuestByDate(searchTerm) {
-    let guestByDate = guest.filter((guest) => {
-      if (guest.date.toLowerCase.includes(searchTerm)) {
+  function SearchForGuestByPhoneNumber(searchTerm) {
+    let guestByPhoneNumber = guest.filter((guest) => {
+      if (guest.phone_number.includes(searchTerm)) {
         return true;
       } else{
         return false;
       }
     });
+    setGuest(guestByPhoneNumber);
     console.log("Testing")
-    setGuest(guestByDate);
-  }
   
   return (
 
@@ -71,5 +71,5 @@ function App() {
 );
 
 }
+}
 export default App;
-    

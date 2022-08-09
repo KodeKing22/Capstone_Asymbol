@@ -4,10 +4,9 @@ import useAuth from "../../hooks/useAuth";
 import useCustomForm from "../../hooks/useCustomForm";
 import axios from "axios";
 import Popup from "reactjs-popup";
+import { Link } from "react-router-dom";
 import checkmark from "../../img/green_checkmark.svg.png";
 
-import { Link } from "react-router-dom";
-import Notification from "rc-notifications";
 
 let initialValues = {
   first_name: "",
@@ -30,11 +29,7 @@ const AddGuestPage = () => {
     addNewGuest
   );
   var handleClick = () => {
-    Notification.newInstance({}, (notification) => {
-      notification.notice({
-        content: "Guest Check-In",
-      });
-    });
+    
   };
   async function addNewGuest() {
     try {
@@ -47,7 +42,7 @@ const AddGuestPage = () => {
           },
         }
       );
-      navigate("/");
+      navigate("/welcome");
     } catch (error) {
       console.log(error.message);
     }
@@ -153,7 +148,7 @@ const AddGuestPage = () => {
           {(close) => (
             <div className="modal">
               <div className="content">
-                <img height={"50px"} src={checkmark} />
+                <img height={"30px"} src={checkmark} />
                 Thank You for Coming Back!
                 <br />
                 We Have A Special Gift for You!

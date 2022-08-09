@@ -22,22 +22,22 @@ import { NavLink as Link} from 'react-router-dom';
        
         />
           </li>
-          <li className="">
+          <li className="navBar">
             <Link to="/welcome" style={{ textDecoration: "none", color: "white" }}>
               <b className="">Welcome Page</b>
             </Link>
           </li>
-          <li className="">
+          <li className="navBar">
             <Link to="/notification" style={{ textDecoration: "none", color: "white" }}>
               <b className="">Notification Page</b>
             </Link>
           </li>
-           <li className="">
+           <li className="navBar">
             <Link to="/displayguest" style={{ textDecoration: "none", color: "white" }}>
               <b className="">Display Guest</b>
             </Link>
           </li>
-          <li className="">
+          <li className="navBar">
             <Link to="/searchguest" style={{ textDecoration: "none", color: "white" }}>
               <b className="">Search Guest</b>
             </Link>

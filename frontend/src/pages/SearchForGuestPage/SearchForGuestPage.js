@@ -1,28 +1,53 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import useCustomForm from "../../hooks/useCustomForm";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
-const SearchForGuestPage = ({SearchForVideoGuests}) => {
-  const [phoneNumber, setPhoneNumber] = useState("");
+let initialValues = {
+  phone_number: ""
+};
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log(phoneNumber)
-    SearchForVideoGuests(phoneNumber);
+const SearchForGuestPage = () => {
+  const [user, token] = useAuth();
+  const navigate = useNavigate();
+  const [formData, handleInputChange, handleSubmit] = useCustomForm(
+    initialValues,
+    searchForGuest
+  );
+
+  async function searchForGuest() {
+    try {
+      let response = await axios.get(
+        "http://127.0.0.1:8000/api/guests/phonenumber/17777777777/",
+        formData,
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+      navigate();
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
+ 
   return (
-    <div className="form">
-
-
-    <form onSubmit={handleSubmit}>
-     
-        <h1>Seach for Guests by Phone Number</h1>
+    <div>
+    <h1>Seach for Guests</h1>
+    <h4>Enter Phone Number</h4>
+      <form className="form" onSubmit={handleSubmit}>
+        <label>
         <input
           type="text"
-          value={phoneNumber}
-          onChange={(event) => setPhoneNumber(event.target.value)}
-          className="form-control"
+          phone_number=""
+          onChange={handleInputChange}
           />
-        <button type="submit" className="btn btn-primary">
+        </label>
+        <button type="submit" className="button">
           Search
         </button>
       

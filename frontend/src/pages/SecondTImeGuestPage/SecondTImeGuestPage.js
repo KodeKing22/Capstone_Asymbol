@@ -33,19 +33,14 @@ const SecondTimeGuestPage = () => {
           },
         }
       );
-      navigate("/");
+      navigate("/welcome");
     } catch (error) {
       console.log(error.message);
     }
   }
   
   return (
-    <div style={{
-      display: 'center',
-      justifyContent: 'center',
-      alignItems: 'flex',
-      height: '100vh'
-    }}>
+    <div>
       <h1>Welcome Back!</h1>
       <h4>Please Check-In below Using your Phone Number</h4>
       <form className="form" onSubmit={handleSubmit}>
@@ -72,7 +67,7 @@ const SecondTimeGuestPage = () => {
           {(close) => (
             <div className="modal">
               <div className="content">
-                <img height={"50px"} src={checkmark}/>Thank You for Coming Back!
+                <img height={"30px"} src={checkmark}/>Thank You for Coming Back!
                 <br />
                 We Have Another Special Gift for You!
               </div>
